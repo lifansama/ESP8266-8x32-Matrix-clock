@@ -271,13 +271,13 @@ void printStringWithShift(const char* s, int shiftDelay){
 void getTime()
 {
   WiFiClient client;
-  if (!client.connect("www.google.com", 80)) {
-    Serial.println("connection to google failed");
+  if (!client.connect("www.baidu.com", 80)) {
+    Serial.println("connection to baidu failed");
     return;
   }
 
   client.print(String("GET / HTTP/1.1\r\n") +
-               String("Host: www.google.com\r\n") +
+               String("Host: www.baidu.com\r\n") +
                String("Connection: close\r\n\r\n"));
   int repeatCounter = 0;
   while (!client.available() && repeatCounter < 10) {
