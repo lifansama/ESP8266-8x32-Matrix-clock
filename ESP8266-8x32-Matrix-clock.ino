@@ -61,7 +61,7 @@ int dx=0;
 int dy=0;
 byte del=0;
 int h,m,s;
-float utcOffset = -4;
+float utcOffset = 8;
 long localEpoc = 0;
 long localMillisAtUpdate = 0;
 // =======================================================================
