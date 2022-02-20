@@ -88,6 +88,15 @@ void loop()
   }
   updateTime();
   showAnimClock();
+  
+  // Adjusting LED intensity.
+  // 12am to 6am, lowest intensity 0
+  if ( (h == 0) || ((h >= 1) && (h <= 6)) ) sendCmdAll(CMD_INTENSITY, 0);
+  // 6pm to 11pm, intensity = 2
+  else if ( (h >=18) && (h <= 23) ) sendCmdAll(CMD_INTENSITY, 2);
+  // max brightness during bright daylight
+  else sendCmdAll(CMD_INTENSITY, 10);
+  
 }
 
 // =======================================================================
